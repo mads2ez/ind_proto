@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>inDriver</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="css/framework7.ios.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="css/my-app.css">
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+    async defer></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&signed_in=true&libraries=places&callback=initAutocomplete"
+    async defer></script>
+
+  </head>
+  <body>
+    <!-- Status bar overlay for fullscreen mode-->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal layout-white">
+      <div class="content-block theme-gray">
+        <div class="account">
+          <img class="account__img" src="img\i-f7-ios.png">
+          <div class="account__title">
+            <span>Name</span>
+          </div>
+          <div class="account__link"><a href="about.html" class="close-panel">Посмотреть профиль</a></div>
+        </div>
+        <p><a href="index.html" class="close-panel">Заказать авто</a></p>
+        <p>Мои поездки</p>
+        <p>Пригласить друзей</p>
+        <p>Настройки</p>
+        <p>Помощь</p>
+        <div class="panel__border"></div>
+        <p>Режим водителя</p>
+      </div>
+    </div>
+    <!-- Right panel with cover effect-->
+    <div class="panel panel-right panel-cover">
+      <div class="content-block">
+        <p>Right panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views-->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only open-panel"> <img class="menu__img" src="img\i-f7-ios.png"></a>
+            </div>
+            <div class="center">Город</div>
+            <div class="right"></div>
+          </div>
+
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+
+            <!-- Scrollable page content-->
+            <div class="page-content">
+              <div id="map"></div>
+              <script>
+                function initMap() {
+                  var mapDiv = document.getElementById('map');
+                  var map = new google.maps.Map(mapDiv, {
+                    center: {lat: 44.540, lng: -78.546},
+                    zoom: 18
+                  });
+                }
+              </script>
+
+              <div class="menubar">
+                <div class="row">
+                  <a class="menubar__btn active" href="index.html">
+                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
+                    <p class="menubar__p">Город</p>
+                  </a>
+                  <a class="menubar__btn" href="index.html">
+                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
+                    <p class="menubar__p">Межгород</p>
+                  </a>
+                  <a class="menubar__btn" href="index.html">
+                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
+                    <p class="menubar__p">Грузовые</p>
+                  </a>
+                  <a class="menubar__btn" href="index.html">
+                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
+                    <p class="menubar__p">Еда</p>
+                  </a>
+                </div>
+              </div>
+
+              <div class="ucard">
+                <form class="requestform" id="requestform">
+                  <div class="list-block">
+                    <ul>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input type="text" name="from" placeholder="Откуда">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input  id="autocomplete"type="text" name="to" placeholder="Куда" onFocus="geolocate()">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input type="number" name="fare" placeholder="Цена">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="ucard__btn">
+                    <a href="#" class="button button-big button-round active form-from-json ">Заказать</a>
+                  </div>
+                </form>
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="js/my-app.js"></script>
+  </body>
+</html>

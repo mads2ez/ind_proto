@@ -1,0 +1,129 @@
+#map {
+  width: 100%;
+  height: 100%;
+  position:absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.menu__img {
+    float: center;
+    margin: 0;
+    position: relative;
+    height: 60%;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+}
+
+.account {
+  float: center;
+  text-align: center;
+  margin: 0;
+  border-bottom: 1px solid #999999;
+}
+
+.account__img {
+    float: center;
+    margin-top: 1em;
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+}
+
+.account__title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.account__link {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  color: #999999;
+}
+
+
+.panel__border {
+  border-bottom: 1px solid #999999;
+}
+
+.menubar {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.menubar__btn {
+  background-color: #e6e6e6;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 10px;
+  color: #999999;
+  font-size: 12px;
+}
+
+.menubar__btn.active {
+  background-color: #e6e6e6;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 10px;
+  color: #000000;
+  font-size: 12px;
+}
+
+.menubar__icon {
+  height: 32px;
+}
+
+.menubar__p {
+   margin:0;
+   text-align: center;
+}
+
+
+.ucard {
+  position: absolute;
+  width: 97%;
+  height: 30%;
+  left: 0;
+  bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #ffffff;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.requestform {
+    padding: 0;
+    margin: 0;
+}
+
+.list-block {
+  margin-top: 5px;
+}
+
+.ucard__btn {
+  position: relative;
+  margin: 10px;
+
+}
