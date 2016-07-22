@@ -15,9 +15,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
     async defer></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&signed_in=true&libraries=places&callback=initAutocomplete"
-    async defer></script>
-
   </head>
   <body>
     <!-- Status bar overlay for fullscreen mode-->
@@ -58,10 +55,10 @@
         <div class="navbar">
           <div class="navbar-inner">
             <div class="left">
-              <a href="#" class="link icon-only open-panel"> <img class="menu__img" src="img\i-f7-ios.png"></a>
+              <a href="#" class="link icon-only open-panel"><i class="icon theme-green icon-bars"></i></a>
             </div>
-            <div class="center">Город</div>
-            <div class="right"></div>
+            <div class="center"><img src="img/inDriver-logo.png"></img></div>
+            <div class="right"><img src="img/Share.png"></div>
           </div>
 
         </div>
@@ -86,30 +83,29 @@
               <div class="menubar">
                 <div class="row">
                   <a class="menubar__btn active" href="index.html">
-                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
                     <p class="menubar__p">Город</p>
                   </a>
                   <a class="menubar__btn" href="index.html">
-                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
                     <p class="menubar__p">Межгород</p>
                   </a>
                   <a class="menubar__btn" href="index.html">
-                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
                     <p class="menubar__p">Грузовые</p>
                   </a>
                   <a class="menubar__btn" href="index.html">
-                    <p class="menubar__p"><img class="menubar__icon" src="img\i-f7-ios.png"></p>
                     <p class="menubar__p">Еда</p>
                   </a>
                 </div>
               </div>
 
-              <div class="ucard">
+              <div class="card">
+                <div class="card-content">
+                <div class="card-content-inner">
                 <form class="requestform" id="requestform">
                   <div class="list-block">
                     <ul>
                       <li>
                         <div class="item-content">
+                          <div class="item-media"><img src="img/A.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
                               <input type="text" name="from" placeholder="Откуда">
@@ -119,15 +115,17 @@
                       </li>
                       <li>
                         <div class="item-content">
+                          <div class="item-media"><img src="img/B-inactive.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
-                              <input  id="autocomplete"type="text" name="to" placeholder="Куда" onFocus="geolocate()">
+                              <input  id="autocomplete" type="text" name="to" placeholder="Куда">
                             </div>
                           </div>
                         </div>
                       </li>
                       <li>
                         <div class="item-content">
+                          <div class="item-media"><img src="img/Ruble-inactive.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
                               <input type="number" name="fare" placeholder="Цена">
@@ -137,19 +135,20 @@
                       </li>
                     </ul>
                   </div>
-                  <div class="ucard__btn">
-                    <a href="#" class="button button-big button-round active form-from-json ">Заказать</a>
+                  <div class="requestCard__btn">
+                    <a href="about.html" class="button button-big button-round active form-from-json ">Заказать</a>
                   </div>
                 </form>
 
 
               </div>
-
+            </div>
             </div>
           </div>
         </div>
 
       </div>
+    </div>
     </div>
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>

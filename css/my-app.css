@@ -97,20 +97,14 @@
 }
 
 
-.ucard {
+.card {
   position: absolute;
-  width: 97%;
-  height: 30%;
   left: 0;
   bottom: 0;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background-color: #ffffff;
-  border-top: 1px solid #cccccc;
-  border-left: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
-  margin-left: 10px;
-  padding: 0;
+  width: 95%;
+  margin-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .requestform {
@@ -122,8 +116,17 @@
   margin-top: 5px;
 }
 
-.ucard__btn {
+.requestCard__btn {
   position: relative;
   margin: 10px;
+}
 
+.button.active {
+  color: #fff;
+  background-color: #4cd964;
+  border-color: #4cd964;
+}
+
+.list-block .item-media {
+  width: 20px;
 }
