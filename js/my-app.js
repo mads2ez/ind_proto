@@ -28,8 +28,6 @@ $('#card').click(function() {
 });
 
 
-
-
 // Generate dynamic page
 var dynamicPageIndex = 0;
 function createContentPage() {
