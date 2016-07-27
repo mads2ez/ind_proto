@@ -8,12 +8,13 @@
     <title>inDriver</title>
     <!-- Path to Framework7 Library CSS-->
     <link rel="stylesheet" href="css/framework7.ios.min.css">
-    <link rel="stylesheet" href="css/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="css/framework7.ios.colors.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
 
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
     async defer></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
 
   </head>
   <body>
@@ -52,23 +53,34 @@
       <div class="view view-main">
 
         <!-- Top Navbar-->
-        <div class="navbar">
+        <div class="navbar" id="navbar">
           <div class="navbar-inner">
             <div class="left">
               <a href="#" class="link icon-only open-panel"><i class="icon theme-green icon-bars"></i></a>
             </div>
             <div class="center"><img src="img/inDriver-logo.png"></img></div>
             <div class="right"><img src="img/Share.png"></div>
-          </div>
 
+            <div class="subnavbar theme-green" id="subnavbar">
+              <div class="buttons-row">
+                <a href="#tab1" class="button tab-link active">Город</a>
+                <a href="#tab2" class="button tab-link">Межгород</a>
+                <a href="#tab3" class="button tab-link">Грузовые</a>
+                <a href="#tab4" class="button tab-link">Еда</a>
+              </div>
+            </div>
+          </div>
         </div>
+
+
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
+        <div class="pages navbar-through">
           <!-- Page, data-page contains page name-->
-          <div data-page="index" class="page">
+          <div data-page="index" class="page with-subnavbar" id="index">
 
             <!-- Scrollable page content-->
             <div class="page-content">
+
               <div id="map"></div>
               <script>
                 function initMap() {
@@ -77,27 +89,22 @@
                     center: {lat: 44.540, lng: -78.546},
                     zoom: 18
                   });
+
+                  var myLatlng = new google.maps.LatLng(44.540, -78.546);
+
+                  var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    title:"Hello World!"
+                  });
+
+                  // To add the marker to the map, call setMap();
+                  marker.setMap(map);
                 }
               </script>
 
-              <div class="menubar">
-                <div class="row">
-                  <a class="menubar__btn active" href="index.html">
-                    <p class="menubar__p">Город</p>
-                  </a>
-                  <a class="menubar__btn" href="index.html">
-                    <p class="menubar__p">Межгород</p>
-                  </a>
-                  <a class="menubar__btn" href="index.html">
-                    <p class="menubar__p">Грузовые</p>
-                  </a>
-                  <a class="menubar__btn" href="index.html">
-                    <p class="menubar__p">Еда</p>
-                  </a>
-                </div>
-              </div>
 
-              <div class="card">
+
+              <div class="card theme-green" id='card'>
                 <div class="card-content">
                 <div class="card-content-inner">
                 <form class="requestform" id="requestform">
@@ -118,7 +125,7 @@
                           <div class="item-media"><img src="img/B-inactive.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
-                              <input  id="autocomplete" type="text" name="to" placeholder="Куда">
+                              <input type="text" name="to" placeholder="Куда">
                             </div>
                           </div>
                         </div>
@@ -133,21 +140,39 @@
                           </div>
                         </div>
                       </li>
+                      <div id="card-active" class="card-active">
+                      <li>
+                        <div class="item-content">
+                          <div class="item-media"><img src="img/Door-inactive.png"></img></div>
+                          <div class="item-inner">
+                            <div class="item-input">
+                              <input type="text" name="comment" placeholder="Подъезд">
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="plink">
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <a href="#" class="parametersLink">Дополнительно</a>
+                          </div>
+                        </div>
+                      </li>
+                      </div>
                     </ul>
                   </div>
                   <div class="requestCard__btn">
-                    <a href="about.html" class="button button-big button-round active form-from-json ">Заказать</a>
+                    <a href="#" class="button button-big button-round active form-from-json ">Заказать</a>
                   </div>
                 </form>
-
-
               </div>
             </div>
             </div>
+
           </div>
         </div>
-
       </div>
+
     </div>
     </div>
     <!-- Path to Framework7 Library JS-->

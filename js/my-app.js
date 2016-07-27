@@ -20,6 +20,16 @@ myApp.onPageInit('about', function (page) {
 });
 
 
+$('#card').click(function() {
+  $('#subnavbar').css({display: 'none'});
+  $('#index').removeClass('with-subnavbar');
+  $('#card').animate({top: '44', bottom: 'auto'}).css({bottom: 'auto'});
+  $('#card-active').css({display: 'inline'});
+});
+
+
+
+
 // Generate dynamic page
 var dynamicPageIndex = 0;
 function createContentPage() {
