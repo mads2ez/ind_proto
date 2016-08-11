@@ -134,6 +134,21 @@
 .list-block .item-media {
   width: 20px;
 }
+
+#request-add-button {
+    position: absolute;
+    background-color: white;
+    right: 0;
+    bottom: -20px;
+    z-index: 599;
+    padding-left: 10px;
+    cursor: pointer;
+    display: none;
+}
+
+#request-c-item {
+  display: none;
+}
 /*
 .navbar:after {
   background-color: #f7f7f8;

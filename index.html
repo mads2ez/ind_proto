@@ -17,7 +17,7 @@
     <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
 
   </head>
-  <body>
+  <body class="theme-green">
     <!-- Status bar overlay for fullscreen mode-->
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
@@ -56,10 +56,10 @@
         <div class="navbar" id="navbar">
           <div class="navbar-inner">
             <div class="left">
-              <a href="#" class="link icon-only open-panel"><i class="icon theme-green icon-bars"></i></a>
+              <a href="#" class="link icon-only open-panel"><img src="img/hamburger.png"/></a>
             </div>
             <div class="center"><img src="img/inDriver-logo.png"></img></div>
-            <div class="right"><img src="img/Share.png"></div>
+            <div class="right"><a href="#" class="link icon-only"><img src="img/Share.png"></a></div>
 
             <div class="subnavbar theme-green" id="subnavbar">
               <div class="buttons-row">
@@ -86,12 +86,11 @@
                 function initMap() {
                   var mapDiv = document.getElementById('map');
                   var map = new google.maps.Map(mapDiv, {
-                    center: {lat: 44.540, lng: -78.546},
-                    zoom: 18
+                    center: {lat: 62.02598700000001, lng: 129.712567},
+                    zoom: 17
                   });
 
-                  var myLatlng = new google.maps.LatLng(44.540, -78.546);
-
+                  var myLatlng = new google.maps.LatLng(62.02598700000001, 129.712567);
                   var image = 'img/Pin.png';
                   var marker = new google.maps.Marker({
                     position: myLatlng,
@@ -106,7 +105,7 @@
 
 
 
-              <div class="card theme-green" id='card'>
+              <div class="card" id='card'>
                 <div class="card-content">
                 <div class="card-content-inner">
                 <form class="requestform" id="requestform">
@@ -117,7 +116,7 @@
                           <div class="item-media"><img src="img/A.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
-                              <input type="text" name="from" placeholder="Откуда">
+                              <input type="text" name="from" placeholder="Откуда" value="Ойунского, 8" id="request-from-input">
                             </div>
                           </div>
                         </div>
@@ -127,17 +126,31 @@
                           <div class="item-media"><img src="img/B-inactive.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
-                              <input type="text" name="to" placeholder="Куда">
+                              <input type="text" name="to" placeholder="Куда" id="request-to-input">
                             </div>
                           </div>
                         </div>
+                        <div id="request-add-button">
+                            <img src="img/plus-active.png" alt="add address">
+                        </div>
+                      </li>
+                      <li id="request-c-item">
+                          <div class="item-content">
+                              <div class="item-media"><img src="img/c-inactive.png"/></div>
+                              <div class="item-inner">
+                                  <div class="item-input">
+                                      <input type="text" name="name" value="" placeholder="Куда"
+                                             id="request-c-input" autocomplete="off"/>
+                                  </div>
+                              </div>
+                          </div>
                       </li>
                       <li>
                         <div class="item-content">
                           <div class="item-media"><img src="img/Ruble-inactive.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
-                              <input type="number" name="fare" placeholder="Цена">
+                              <input type="number" name="fare" placeholder="Цена" id="request-fare-input">
                             </div>
                           </div>
                         </div>
@@ -148,7 +161,7 @@
                           <div class="item-media"><img src="img/Door-inactive.png"></img></div>
                           <div class="item-inner">
                             <div class="item-input">
-                              <input type="text" name="comment" placeholder="Подъезд">
+                              <input type="text" name="comment" placeholder="Подъезд" id="request-entry-input">
                             </div>
                           </div>
                         </div>
@@ -164,7 +177,7 @@
                     </ul>
                   </div>
                   <div class="requestCard__btn">
-                    <a href="#" class="button button-big button-round active form-from-json ">Заказать</a>
+                    <a href="#" class="button button-big button-round active form-from-json" id="request-submit-btn">Заказать</a>
                   </div>
                 </form>
               </div>
